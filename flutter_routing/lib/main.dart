@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_routing/pages/homePage.dart';
+import 'package:flutter_routing/pages/introPage.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,12 +11,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const introPage(),
+      routes: {
+        '/homepage': (context) => const homePage(),
+        '/introPage': (context) => const introPage(),
+      },
     );
   }
 }
