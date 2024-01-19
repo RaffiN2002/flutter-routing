@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_routing/pages/homePage.dart';
 import 'package:flutter_routing/pages/introPage.dart';
 
 void main() {
@@ -11,13 +10,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const introPage(),
-      routes: {
-        '/homepage': (context) => const homePage(),
-        '/introPage': (context) => const introPage(),
-      },
+      home: introPage(),
     );
   }
 }

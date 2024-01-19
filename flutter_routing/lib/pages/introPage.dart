@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_routing/pages/homePage.dart';
+
 
 class introPage extends StatelessWidget {
   const introPage({super.key});
@@ -15,9 +17,16 @@ class introPage extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-          child: const Text("Go to Home Page"),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.purple,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0))
+            ),
+          child: const Text("Go to Home Page",
+          style: TextStyle(color: Colors.white),
+          ),
           onPressed: () {
-            Navigator.pushNamed(context, '/homepage');
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const homePage()),
+            );
           },
         ),
       ),
